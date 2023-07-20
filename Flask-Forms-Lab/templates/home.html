@@ -9,17 +9,12 @@
 
 <h2>Facebook Search Bar</h2>
 
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+<input type="text" method="POST" id="myInput" name="friendChoice" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
 
 <ul id="myUL">
-  <li><a href="#">Adele</a></li>
-  <li><a href="#">Agnes</a></li>
-  <li><a href="#">Billy</a></li>
-  <li><a href="#">Bob</a></li>
-  <li><a href="#">Calvin</a></li>
-  <li><a href="#">Christina</a></li>
-  <li><a href="#">Cindy</a></li>
-  <li><a href="#">Loai</a></li>
+  {% for friend in friends %}
+  <li><a> {{friend}} </a></li>
+  {% endfor %}
 </ul>
 
 <script>
