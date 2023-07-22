@@ -14,7 +14,10 @@
 </head>
 <body>
 
-{{exists}}
-
+{% if exists %}
+        <h3>True</h3>
+    {% else %}
+        <h3>False</h3>
+    {% endif %}
 </body>
 </html>

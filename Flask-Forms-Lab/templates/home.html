@@ -2,18 +2,19 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="{{url_for('static', filename='homestyle.css')}}">  
+<link rel="stylesheet" href="{{url_for('static', filename='homestyle.css')}}">          
 
 </head>
 <body>
 
 <h2>Facebook Search Bar</h2>
-
-<input type="text" method="POST" id="myInput" name="friendChoice" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+<form method="POST" action="{{ url_for('home') }}" id="myForm">
+    <input type="text" id="myInput" name="friendChoice" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+</form>
 
 <ul id="myUL">
   {% for friend in friends %}
-  <li><a> {{friend}} </a></li>
+  <li><a href> {{friend}} </a></li>
   {% endfor %}
 </ul>
 
